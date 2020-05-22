@@ -1,0 +1,7 @@
+
+prog.o
+bats.o
+event.o
+file_io.o
+game.o
+bats.o
