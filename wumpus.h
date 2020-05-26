@@ -3,6 +3,7 @@
 
 #include <string>
 #include "event.h"
+#include "file_io.h"
 
 
 class Wumpus : public Event {
@@ -15,6 +16,8 @@ class Wumpus : public Event {
         Wumpus();
         ~Wumpus() { };
         std::string percept();
+        int encounter();
+        int getShot();
 
 
 };

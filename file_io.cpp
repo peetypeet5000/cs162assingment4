@@ -6,8 +6,8 @@ void readAsciiArt(int selection) {
     int dist, move;
     switch(selection) {
         case 1:
-            dist = 15;
-            move = 1;
+            dist = 14;
+            move = 2;
             break;
         case 2:
             dist = 74;
@@ -20,6 +20,18 @@ void readAsciiArt(int selection) {
         case 4:
             dist = 41;
             move = 163;
+            break;
+        case 5: //pit
+            dist = 48;
+            move = 205;
+            break;
+        case 6: //bats
+            dist = 53;
+            move = 253;
+            break;
+        case 7: //sign
+            dist = 53;
+            move = 311;
             break;
     }
 
@@ -49,5 +61,13 @@ ifstream& changeLine(ifstream& fin, int lines){
         fin.ignore(numeric_limits<streamsize>::max(),'\n');
     }
     return fin;
+}
+
+
+
+void pressSpace() {
+	std::string input = " ";
+    std::cout << "*press ENTER to continue...*";
+	std::getline(cin, input);
 }
 

@@ -21,6 +21,7 @@
 int getInt();
 bool checkRange(int, int, int);
 bool isInt(std::string);
-std::string getFancyType(int);
+bool checkArgs(int, char**);
+
 
 #endif

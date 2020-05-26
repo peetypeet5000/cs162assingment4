@@ -3,6 +3,7 @@
 
 #include <string>
 #include "event.h"
+#include "file_io.h"
 
 
 class Pit : public Event {
@@ -15,6 +16,8 @@ class Pit : public Event {
         Pit();
         ~Pit() { };
         std::string percept();
+        int encounter();
+        int getShot();
 
 
 };

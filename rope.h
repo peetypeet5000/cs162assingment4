@@ -3,6 +3,7 @@
 
 #include <string>
 #include "event.h"
+#include "file_io.h"
 
 
 class Rope : public Event {
@@ -15,6 +16,8 @@ class Rope : public Event {
         Rope();
         ~Rope() { };
         std::string percept();
+        int encounter();
+        int getShot();
 
 
 };

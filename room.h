@@ -18,8 +18,13 @@ class Room {
         
     public:
         Room() { };
+        ~Room();
         Room(int);
         void setRoomEvent(int);
+        char getEventChar(bool);
+        std::string getPercept();
+        int getEncounter();
+        int shoot();
 
 
 };

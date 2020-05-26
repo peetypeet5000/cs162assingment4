@@ -86,24 +86,34 @@ bool isInt(string input) {
 }
 
 
+/*******************************************************************
+** Function: checkArgs()
+** Description: Make sure commmand line args are correct
+** Parameters: iint argc, char** argv (obviously)
+** Pre-conditions: sent these arguments
+** Post-conditions: return true if all args present and in range
+*******************************************************************/
+bool checkArgs(int argc, char** argv) {
+	if(argc != 3) {
+		std::cout << "\nUsage: ./Wumpus <Size of board[4-15]> <Debug mode[true/false]>\n";
+		return false;
+	} 
+	
+	std::string debug(argv[2]);
 
-/*************************************************
- * Notes/Funct: returns a std::string of animal name
- * In: int from 0-2
- * Out: std::string w/ animals species
- * Conditions: need correct range of int or get "error"
- * ***********************************************/
-std::string getFancyType(int type) {
-	switch (type) {
-		case 2:
-			return "Sea Lion";
-			break;
-		case 1:
-			return "Tiger";
-			break;
-		case 0:
-			return "Black Bear";
-			break;
+	if (debug != "false" && debug != "true") {
+		std::cout << "\nIncorrect Debug Mode\nUsage: ./Wumpus <Size of board[4-15]> <Debug mode[true/false]>\n";
+		return false;
 	}
-	return "Error (get fancy type)";
+
+	std::string size(argv[1]);
+	int size_int = stoi(size);
+
+	if(size_int < 4 || size_int > 15) {
+		std::cout << "\nIncorrect Board Size\nUsage: ./Wumpus <Size of board[4-15]> <Debug mode[true/false]>\n";
+		return false;
+	}
+
+	return true;
+
 }
