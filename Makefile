@@ -29,4 +29,4 @@ clean:
 	rm *.o $(exe_file)
 
 tar:
-	tar -cvf $(exe_file).tar *.cpp *.h Makefile
+	tar -cvf $(exe_file).tar *.cpp *.h bft.txt Makefile

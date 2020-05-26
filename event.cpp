@@ -9,26 +9,11 @@ Event::Event() {
 
 
 
-//EVENT PERCEPT, returns nothing as event percept should
-//be blank
-std::string Event::percept() {
-    return "";
-}
-
-
-
 //GETTYPe -- getter for type var, used to print debug mode symbols
 char Event::getType() {
     return type;
 }
 
-
-
-//ENCOUNTER -- returns zero so game knows nothing should happen if player
-//is in basic event room
-int Event::encounter() {
-    return 0;
-}
 
 
 //getSHOT -- return zero so game knows wumpus is not here

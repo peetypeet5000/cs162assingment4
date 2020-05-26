@@ -125,8 +125,7 @@ void Room::setRoomEvent(int event) {
             room_event = new Rope;
             break;
         default:
-            //std::cout << "Calling Defualt Room Event\n";
-            room_event = new Event;
+            //makes nothing, as event is abstract
             break;
     }
 }
@@ -148,7 +147,7 @@ char Room::getEventChar(bool debug) const {
             return room_event->getType();
         }
     }
-    return 'E';
+    return ' ';
 }
 
 
@@ -156,15 +155,28 @@ char Room::getEventChar(bool debug) const {
 //ROOM GetPercept -> Just calls the percept function on the room_event for use
 //polymorphically, returns it
 std::string Room::getPercept() {
-    return room_event->percept();
+    if(room_event != NULL) {
+        return room_event->percept();
+    } else {
+        return "";
+    }
 }
 
 
 
 //ROOM GetEncounter -> Same as above but for encounter
 int Room::getEncounter() {
-    return room_event->encounter();
-    //return 0 if nothing, 1 if wum, 2 if gold, 3 if bats, 4 if pit, 5 if event
+    int output = 0;
+    if(room_event != NULL) {
+        output = room_event->encounter();
+        //return 0 if nothing, 1 if wum, 2 if gold, 3 if bats, 4 if pit, 5 if event
+    } 
+
+    if(output == 2) {
+        setRoomEvent(0);    //deletes gold after acquired
+    }
+
+    return output;
 }
 
 
@@ -177,9 +189,12 @@ int Room::getEncounter() {
  * Conditions: none
  * ***********************************************/
 int Room::shoot() {
-    int output = room_event->getShot();
-    if(output == 1) {
-        setRoomEvent(0);      //if wump killed, remove from board
+    int output = 0;
+    if(room_event != NULL) {
+        output = room_event->getShot();
+        if(output == 1) {
+            setRoomEvent(0);      //if wump killed, remove from board
+        }
     }
 
     return output;
