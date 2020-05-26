@@ -14,7 +14,7 @@ class Bats : public Event {
         Bats();
         ~Bats() { };
         std::string percept();
-        int encounter();
+        int encounter() override;
         int getShot();
 
 

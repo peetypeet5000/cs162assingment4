@@ -17,7 +17,6 @@ class Pit : public Event {
         ~Pit() { };
         std::string percept();
         int encounter();
-        int getShot();
 
 
 };

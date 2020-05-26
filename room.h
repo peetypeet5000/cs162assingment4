@@ -20,8 +20,10 @@ class Room {
         Room() { };
         ~Room();
         Room(int);
+        Room(const Room&);
+        Room& operator=(const Room&);
         void setRoomEvent(int);
-        char getEventChar(bool);
+        char getEventChar(bool) const;
         std::string getPercept();
         int getEncounter();
         int shoot();

@@ -15,9 +15,8 @@ class Gold : public Event {
     public:
         Gold();
         ~Gold() { };
-        std::string percept();
-        int encounter();
-        int getShot();
+        std::string percept() override;
+        int encounter() override;
 
 };
 

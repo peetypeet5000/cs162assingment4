@@ -17,7 +17,7 @@ class Wumpus : public Event {
         ~Wumpus() { };
         std::string percept();
         int encounter();
-        int getShot();
+        int getShot() override;
 
 
 };

@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <vector>
 #include <algorithm>
+#include <stdio.h>
 #include "file_io.h"
 #include "util.h"
 #include "event.h"
@@ -28,6 +29,7 @@ class Game {
     public:
         Game(char**);
         Game(char**, vector<int>);
+        ~Game() { }; //Only dynamic mem is vectors, handel themselves
         void generateSeed();
         void gameLoop();
         void makeBoard();
@@ -40,6 +42,7 @@ class Game {
         void getPercepts();
         void randomizePlayerCoords();
         void shootArrow(int);
+        void moveWumpus();
         vector<int> getSeed();
 
 

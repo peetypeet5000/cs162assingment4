@@ -14,11 +14,11 @@ class Event {
         char type;
     public:
         Event() ;
-        virtual ~Event() { };
-        std::string virtual percept();
+        virtual ~Event() { };   //No dynamic mem, but must be virtual b/c children
+        std::string virtual percept(); //overloaded by ALL
         char getType();
-        int virtual encounter();
-        int virtual getShot();
+        int virtual encounter(); //overloaded by ALL
+        int virtual getShot(); //overloaded by WUMPUS
 
 
 };

@@ -15,6 +15,8 @@
 #include "file_io.h"
 
 
+
+//Plays the gamne with a reused seed
 vector<int> playWithSeed(vector<int> seed, char** argv) {
     Game game(argv, seed);
     seed = game.getSeed();
@@ -22,10 +24,11 @@ vector<int> playWithSeed(vector<int> seed, char** argv) {
 }
 
 
+//Plays the game with a new seed
 vector<int> playNoSeed(vector<int> seed, char** argv) {
     Game game(argv);
     seed = game.getSeed();
-    return seed;
+    return seed;    //returns in case want to be reused
 }
 
 
@@ -44,12 +47,9 @@ int main(int argc, char** argv) {
         //play game at least once
         seed = playNoSeed(seed, argv);
 
-
         do {
-            do{
-
+            do{ //asks to play again
                 cout << "Do you want to play again?\n[0] - No\n[1] - Yes, different bord\n[2] - Yes, same bord\n\n";
-    
                 input = getInt();
             } while(checkRange(input, 2, 0) == false);
 
@@ -60,7 +60,7 @@ int main(int argc, char** argv) {
             } else {
                 done = true;
             }
-        } while (done == false);
+        } while (done == false);    //stops the game from looping
 
     }
     return 0;

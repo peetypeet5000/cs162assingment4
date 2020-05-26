@@ -17,7 +17,6 @@ class Rope : public Event {
         ~Rope() { };
         std::string percept();
         int encounter();
-        int getShot();
 
 
 };

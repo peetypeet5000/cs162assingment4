@@ -2,6 +2,7 @@
 using namespace std;
 
 
+//reads art from file, uses the cases to know where to start
 void readAsciiArt(int selection) {
     int dist, move;
     switch(selection) {
@@ -17,7 +18,7 @@ void readAsciiArt(int selection) {
             dist = 66;
             move = 94;
             break;
-        case 4:
+        case 4: //jordan
             dist = 41;
             move = 163;
             break;
@@ -27,11 +28,27 @@ void readAsciiArt(int selection) {
             break;
         case 6: //bats
             dist = 53;
-            move = 253;
+            move = 254;
             break;
         case 7: //sign
-            dist = 53;
+            dist = 52;
             move = 311;
+            break;
+        case 8: //wum
+            dist = 60;
+            move = 365;
+            break;
+        case 9: //died
+            dist = 52;
+            move = 429;
+            break;
+        case 10: //gold
+            dist = 51;
+            move = 485;
+            break;
+        case 11: //exit
+            dist = 53;
+            move = 539;
             break;
     }
 
@@ -64,10 +81,10 @@ ifstream& changeLine(ifstream& fin, int lines){
 }
 
 
-
+//Just makes user enter ENTER so that they can read before continuing
 void pressSpace() {
 	std::string input = " ";
-    std::cout << "*press ENTER to continue...*";
+    std::cout << "\n\n*press ENTER to continue...*\n";
 	std::getline(cin, input);
 }
 
