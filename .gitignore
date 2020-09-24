@@ -5,3 +5,4 @@ event.o
 file_io.o
 game.o
 bats.o
+.vscode/tasks.json
